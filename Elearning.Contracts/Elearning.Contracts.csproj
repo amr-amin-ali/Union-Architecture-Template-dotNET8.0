@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Repositories\IdentityIRepository\**" />
+    <Compile Remove="Services\IdentityServices\**" />
+    <EmbeddedResource Remove="Repositories\IdentityIRepository\**" />
+    <EmbeddedResource Remove="Services\IdentityServices\**" />
+    <None Remove="Repositories\IdentityIRepository\**" />
+    <None Remove="Services\IdentityServices\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Elearning.Shared\Elearning.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

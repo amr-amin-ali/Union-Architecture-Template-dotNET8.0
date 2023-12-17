@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+		<WarningLevel>0</WarningLevel>
+		<WarningsAsErrors />
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+		<WarningLevel>0</WarningLevel>
+		<WarningsAsErrors />
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Filters\**" />
+		<Compile Remove="ViewModel\**" />
+		<Compile Remove="Configurations\**" />
+		<Content Remove="Configurations\**" />
+		<Content Remove="Filters\**" />
+		<Content Remove="ViewModel\**" />
+		<EmbeddedResource Remove="Configurations\**" />
+		<EmbeddedResource Remove="Filters\**" />
+		<EmbeddedResource Remove="ViewModel\**" />
+		<None Remove="Configurations\**" />
+		<None Remove="Filters\**" />
+		<None Remove="ViewModel\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="nlog.config_OLD" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="nlog.config_OLD" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+		<PackageReference Include="FirebaseAdmin" Version="2.4.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.Negotiate" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="NLog" Version="5.2.7" />
+		<PackageReference Include="NLog.Database" Version="5.2.7" />
+		<PackageReference Include="NLog.Web.AspNetCore" Version="5.3.5" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+		<PackageReference Include="System.DirectoryServices" Version="8.0.0" />
+		<PackageReference Include="System.DirectoryServices.Protocols" Version="8.0.0" />
+		<PackageReference Include="System.DirectoryServices.AccountManagement" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Properties\PublishProfiles\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Elearning.Logging\Elearning.Utils.csproj" />
+		<ProjectReference Include="..\Elearning.Services\Elearning.Services.csproj" />
+		<ProjectReference Include="..\Elearning.Contracts\Elearning.Contracts.csproj" />
+		<ProjectReference Include="..\Elearning.Repositiores\Elearning.Repositiores.csproj" />
+		<ProjectReference Include="..\ELearning.Notifications\ELearning.Notifications.csproj" />
+	</ItemGroup>
+
+</Project>

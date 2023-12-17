@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="AutoMapperProfiles\Consultation_Profiles\**" />
+    <Compile Remove="AutoMapperProfiles\Emergency_Profiles\**" />
+    <Compile Remove="DTOs\NewFolder\**" />
+    <Compile Remove="IdentityShared\**" />
+    <EmbeddedResource Remove="AutoMapperProfiles\Consultation_Profiles\**" />
+    <EmbeddedResource Remove="AutoMapperProfiles\Emergency_Profiles\**" />
+    <EmbeddedResource Remove="DTOs\NewFolder\**" />
+    <EmbeddedResource Remove="IdentityShared\**" />
+    <None Remove="AutoMapperProfiles\Consultation_Profiles\**" />
+    <None Remove="AutoMapperProfiles\Emergency_Profiles\**" />
+    <None Remove="DTOs\NewFolder\**" />
+    <None Remove="IdentityShared\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Elearning.Entittes\Elearning.Entittes.csproj" />
+  </ItemGroup>
+
+</Project>
